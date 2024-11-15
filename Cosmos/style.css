@@ -1,0 +1,334 @@
+body {
+    box-sizing: border-box;
+    /* background-color: rgba(14, 6, 35); */
+    background-image: url("./img/105294.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(224, 219, 240);
+    font-family: Rubik, sans-serif;
+    cursor: default;
+    user-select: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+header {
+    font-size: 3rem;
+    height: 100px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    border-bottom: 7px double white;
+
+}
+
+li {
+    padding: 5px;
+}
+
+#homenav:hover,
+li:hover {
+    box-shadow: 0 0 25px 10px rgba(230, 205, 116, 0.7);
+}
+
+#homenav:active,
+li:active {
+    transform: rotate(180deg);
+}
+
+#homenav {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 1s ease-in-out backwards;
+    padding-right: 5px;
+}
+
+li {
+    transition: transform 1s ease-in-out backwards;
+    border-radius: 5px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.card {
+
+    background-image: url(./img/milkyway.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+
+
+}
+
+.content {
+
+    background: rgba(10, 40, 31, 0.5);
+    display: grid;
+    grid-template-columns: 400px 1fr 1fr auto;
+    padding: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "info info info photo1"
+        "photo2 trivia trivia photo1";
+    gap: 20px;
+}
+
+.photo1 {
+    grid-area: photo1;
+    height: 625px;
+    width: 400px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 3%;
+    overflow: clip;
+}
+
+.photo2 {
+    grid-area: photo2;
+    object-fit: cover;
+    width: 400px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+.info {
+    grid-area: info;
+    font-size: 1.3rem;
+    letter-spacing: 0.09rem;
+    font-weight: 300;
+    text-shadow: 0 0 5px black;
+
+}
+
+.trivia {
+    grid-area: trivia;
+    font-size: 1.1rem;
+    letter-spacing: 0.09rem;
+    margin-top: 0;
+
+}
+
+.trivia::first-line {
+    text-decoration: overline whitesmoke;
+}
+
+#cosmos {
+    background-image: url("./img/cosmos1.jpg");
+    background-position: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 5;
+
+}
+
+#cosmos h1 {
+    font-size: 20rem;
+    font-weight: 300;
+    text-shadow: 0 0 2px rgb(94, 92, 92);
+    margin: auto;
+    letter-spacing: 0.5rem;
+    display: inline-block;
+    animation: intro 1.5s ease-in forwards;
+    padding: 150px 0;
+
+}
+
+@keyframes intro {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+@media (min-width:2000px) {
+
+
+    .card {
+        min-height: 60dvh;
+        height: 80dvh;
+
+    }
+
+    .content {
+        padding: 50px 100px;
+    }
+
+
+    .photo2 {
+        width: 400px;
+        height: 300px;
+        border: none;
+
+        justify-self: center;
+        object-fit: cover;
+    }
+}
+
+
+@media (min-width: 900px) and (max-width: 1200px) {
+
+
+
+    .card {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul {
+
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    #cosmos h1 {
+        font-size: 10rem;
+        padding: 280px 0;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header {
+        padding: 0 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .content {
+        grid-template-rows: 1fr 0.7fr;
+        grid-template-areas: "info info info photo1"
+            "photo2 trivia trivia trivia";
+
+    }
+
+    .photo1 {
+        height: 400px;
+        width: 300px;
+    }
+
+    .photo2 {
+        height: 200px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    body {
+        margin: 0;
+    }
+
+
+    #cosmos h1 {
+        font-size: 4rem;
+        margin: 100px;
+
+    }
+
+    #title {
+        font-size: 1.8rem;
+    }
+
+    #homenav {
+        font-size: 1.5rem;
+        color: lightslategray;
+    }
+
+    ul {
+        flex-direction: column;
+        margin: 10px;
+        padding: 0;
+    }
+
+    .card {
+
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .photo1 {
+        width: 0;
+        height: 0;
+    }
+
+    .photo2 {
+        width: 100svw;
+        height: fit-content;
+        border: none;
+        padding: 10px;
+        margin-right: 10px;
+        justify-self: center;
+        object-fit: cover;
+
+
+    }
+
+    .info,
+    .trivia {
+        font-size: 0.8rem;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    header {
+
+        justify-self: center;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
